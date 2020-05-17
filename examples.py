@@ -13,8 +13,8 @@ plt.title(titulo)
 plt.xlabel(eixox)
 plt.ylabel(eixoy)
 
-plt.scatter(x, y, label = "Meus pontos", color = "r")
-plt.plot(x, y)
+plt.plot(x, y, color="k", linestyle=":")
+plt.scatter(x, y, label="Meus pontos", color="red", marker=".", s=200)
 plt.legend()
 
 plt.show()
