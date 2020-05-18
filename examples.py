@@ -18,4 +18,5 @@ plt.plot(x, y, color="#000000", linestyle="--")
 plt.scatter(x, y, label="Meus pontos", color="k", marker=".", s=z)
 plt.legend()
 
-plt.show()
+#plt.show()
+plt.savefig("figura1.png", dpi=300)
