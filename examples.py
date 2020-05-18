@@ -1,23 +1,13 @@
-# Crescimento da População Brasileira 1980-2016
-# DataSus
+# Boxplot - diagrama de caixa
 import matplotlib.pyplot as plt
+import random
 
-dados = open("populacao_brasileira.csv").readlines()
+vetor = []
 
-x = []
-y = []
+for i in range(20):
+	numero_aleatorio = random.randint(0,10)
+	vetor.append(numero_aleatorio)
 
-for i in range(len(dados)):
-	if i != 0:
-		linha = dados[i].split(";")
-		x.append(int(linha[0]))
-		y.append(int(linha[1]))
-
-plt.bar(x, y, color="#e4e4e4")
-plt.plot(x, y, color="k", lineStyle="--")
-
-plt.title("Crescimento da População Brasileira 1980-2016")
-plt.xlabel("Ano")
-plt.ylabel("População x100.000.000")
-#plt.show()
-plt.savefig("populacao_brasileira.png", dpi=300)
+plt.boxplot(vetor)
+plt.title("Boxplot")
+plt.show()
