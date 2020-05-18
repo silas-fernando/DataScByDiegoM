@@ -1,22 +1,23 @@
-# Visualização de dados em Python
+# Crescimento da População Brasileira 1980-2016
+# DataSus
 import matplotlib.pyplot as plt
 
-x = [1, 3, 5, 7, 9]
-y = [2, 3, 7, 1, 0]
-z = [200, 25, 400, 3300, 100]
+dados = open("populacao_brasileira.csv").readlines()
 
-titulo = "Scatterplot: gráfico de dispersão"
-eixox = "Eixo X"
-eixoy = "Eixo Y"
+x = []
+y = []
 
-# Legendas
-plt.title(titulo)
-plt.xlabel(eixox)
-plt.ylabel(eixoy)
+for i in range(len(dados)):
+	if i != 0:
+		linha = dados[i].split(";")
+		x.append(int(linha[0]))
+		y.append(int(linha[1]))
 
-plt.plot(x, y, color="#000000", linestyle="--")
-plt.scatter(x, y, label="Meus pontos", color="k", marker=".", s=z)
-plt.legend()
+plt.bar(x, y, color="#e4e4e4")
+plt.plot(x, y, color="k", lineStyle="--")
 
+plt.title("Crescimento da População Brasileira 1980-2016")
+plt.xlabel("Ano")
+plt.ylabel("População x100.000.000")
 #plt.show()
-plt.savefig("figura1.png", dpi=300)
+plt.savefig("populacao_brasileira.png", dpi=300)
